@@ -10,7 +10,7 @@ OBJ_FILES = ${C_SOURCES:.c=.o}
 all: run
 
 kernel.bin: bootloader/kernel-entry.o ${OBJ_FILES}
-	ld -m elf_i686 -o $@ -Ttext 0x1000 $^ --oformat binary
+	ld -m elf_x86_64 -o $@ -Ttext 0x1000 $^ --oformat binary
 
 os-image.bin: mbr.bin kernel.bin
 	cat $^ > $@
