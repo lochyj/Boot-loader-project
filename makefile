@@ -19,9 +19,6 @@ run: os-image.bin
 	qemu-system-x86_64 -drive format=raw,file=$<
 # qemu-system-x86_64 -fda $<
 
-%.o: %.c ${HEADERS}
-	x86_64-elf-gcc -g -m32 -ffreestanding -c $< -o $@ # -g for debugging
-
 %.o: %.asm
 	nasm $< -f elf -o $@
 
