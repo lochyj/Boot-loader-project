@@ -1,6 +1,6 @@
 # Kernel and bootloader project
 
-## Inspired and based off of frosnerd's article on [Writing my own boot loader](https://dev.to/frosnerd/writing-my-own-boot-loader-3mld)
+## Inspired by [Writing my own OS](https://github.com/cfenollosa/os-tutorial/)
 
 ## Running
 - recommended to use linux - I used arch
