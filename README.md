@@ -9,3 +9,5 @@ run `make run` to run the kernel in qemu
 ## Connect to the VNC server
 download and install "VNC viewer" from [here](https://www.realvnc.com/en/connect/download/viewer/)
 then connect to the server at `127.0.0.1`
+
+TODO: Fix complier errors...

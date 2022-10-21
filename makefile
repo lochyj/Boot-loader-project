@@ -4,8 +4,8 @@ HEADERS = $(wildcard kernel/*.h drivers/*.h cpu/*.h libc/*.h)
 OBJ = ${C_SOURCES:.c=.o cpu/interrupt.o} 
 
 # Change this if your cross-compiler is somewhere else
-CC = /usr/local/i386elfgcc/bin/i386-elf-gcc
-GDB = /usr/local/i386elfgcc/bin/i386-elf-gdb
+CC = /usr/sbin/gcc
+GDB = /usr/sbin/gcc
 # -g: Use debugging symbols in gcc
 CFLAGS = -g -ffreestanding -Wall -Wextra -fno-exceptions -m32
 
@@ -13,8 +13,7 @@ CFLAGS = -g -ffreestanding -Wall -Wextra -fno-exceptions -m32
 os-image.bin: boot/bootsect.bin kernel.bin
 	cat $^ > os-image.bin
 
-# '--oformat binary' deletes all symbols as a collateral, so we don't need
-# to 'strip' them manually on this case
+# '--oformat binary' deletes all symbols as a collateral, so we don't need to 'strip' them manually on this case
 kernel.bin: boot/kernel_entry.o ${OBJ}
 	i386-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
